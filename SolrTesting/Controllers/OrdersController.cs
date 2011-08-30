@@ -19,7 +19,8 @@ namespace SolrTesting.Controllers
 
         public ViewResult Index()
         {
-            return View(_repository.Query(SolrQuery.All).ToList());
+            return View(_repository.Query(SolrQuery.All,
+                new[] { new SortOrder("Id", Order.ASC) }).ToList());
         }
 
         //
@@ -27,8 +28,7 @@ namespace SolrTesting.Controllers
 
         public ViewResult Details(int id)
         {
-            var order = _repository.Query(new SolrQueryByField("Id", id.ToString()),
-                new[] { new SortOrder("Id", Order.ASC)}).FirstOrDefault();
+            var order = _repository.Query(new SolrQueryByField("Id", id.ToString())).FirstOrDefault();
             return View(order);
         }
 
