@@ -1,0 +1,37 @@
+@model SolrTesting.Models.Order
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.OrderDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.OrderDate)
+    @Html.ValidationMessageFor(model => model.OrderDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.DeliveryDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.DeliveryDate)
+    @Html.ValidationMessageFor(model => model.DeliveryDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CustomerName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CustomerName)
+    @Html.ValidationMessageFor(model => model.CustomerName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.OrderName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.OrderName)
+    @Html.ValidationMessageFor(model => model.OrderName)
+</div>
+
